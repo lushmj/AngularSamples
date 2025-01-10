@@ -1,0 +1,78 @@
+<style>
+  .section {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .user-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 40px auto;
+    background-color: #94cdde;
+    width: 40%;
+    align-self: auto;
+  }
+
+  .user-card-header {
+    background-color: #cfdde0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .user-card-header h2 {
+    margin: 0;
+  }
+  .user-card-body {
+    padding: 10px;
+  }
+  .user-card-body p {
+    margin: 5px 0;
+  }
+  h1 {
+    width: 30;
+    margin: 40px auto;
+  }
+</style>
+<h1>List Of Users</h1>
+@for (user of userList; track user.id) {
+<div class="user-card">
+  <div class="user-card-header">
+    <h2>{{ user.name.firstname }} {{ user.name.lastname }}</h2>
+    <p>ID: {{ user.id }}</p>
+  </div>
+  <div class="user-card-body">
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Phone:</strong> {{ user.phone }}</p>
+    <p>
+      <strong>Address:</strong> {{ user.address.street }},
+      {{ user.address.number }}, {{ user.address.city }},
+      {{ user.address.zipcode }}
+    </p>
+    <p>
+      <strong>GeoLocation:</strong> Lat: {{ user.address.geolocation.lat }},
+      Long: {{ user.address.geolocation.long }}
+    </p>
+  </div>
+  <!---  <div><strong>ID:</strong> {{ user.id }}</div>
+  <div>
+    <strong>Name:</strong> {{ user.name.firstname }} {{ user.name.lastname }}
+  </div>
+  <div><strong>Email:</strong> {{ user.email }}</div>
+  <div><strong>Username:</strong> {{ user.username }}</div>
+  <div><strong>Phone:</strong> {{ user.phone }}</div>
+  <div>
+    <strong>Address:</strong> {{ user.address.street }},
+    {{ user.address.number }}, {{ user.address.city }},
+    {{ user.address.zipcode }}
+  </div>
+  <div>
+    <strong>GeoLocation:</strong> Lat: {{ user.address.geolocation.lat }}, Long:
+    {{ user.address.geolocation.long }}
+  </div>
+  -->
+</div>
+
+}
