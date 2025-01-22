@@ -1,1 +1,6 @@
-<p>home works!</p>
+<div>
+  <h1>Enter Your Name:</h1>
+  <input [(ngModel)]="parentValue" placeholder="Type something" />
+
+  <app-lifecycle [parentValue]="parentValue"> </app-lifecycle>
+</div>

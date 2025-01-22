@@ -1,0 +1,25 @@
+<div class="product-details" *ngIf="product && product.id > 0">
+  <!-- <img src="{{product.image}}" alt="Product Image" class="product-image"> -->
+  <!-- <div class="product-info">
+    <h1 class="product-title">{{ product.title }}</h1>
+    <p class="product-category">Category: {{ product.category }}</p>
+    <p class="product-price">${{ product.price }}</p>
+    <p class="product-description">
+      {{ product.brand }}
+    </p>
+  </div>
+  -->
+  <div class="product-container">
+    <div class="product-image"></div>
+    <div class="product-content">
+      <h2 class="product-title">{{ product.title }}</h2>
+      <div class="product-info"><span>ID:</span> {{ product.id }}</div>
+      <div class="product-info"><span>Brand:</span> {{ product.brand }}</div>
+      <div class="product-info">
+        <span>Category:</span> {{ product.category }}
+      </div>
+      <div class="product-price">${{ product.price }}</div>
+      <button class="product-button">Buy Now</button>
+    </div>
+  </div>
+</div>
